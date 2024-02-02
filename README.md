@@ -1,16 +1,21 @@
-# krika
+# Nombre de tu Aplicación
+KRIKA prueba
+## Descripción
+Esta aplicación permite a los usuarios ver productos obtenidos desde VTEX y visualizarlos en una interfaz amigable.
 
-A new Flutter project.
+## Características Principales
+- Visualización de productos en una interfaz atractiva.
+- Muestra imágenes, nombres y precios de los productos.
 
-## Getting Started
+## Capturas de Pantalla
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologías Utilizadas
+- Dart
+- Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Autor
+Jorge Luis Leiton Arias
+
+

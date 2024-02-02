@@ -1,4 +1,4 @@
-# Nombre de tu Aplicación
+# Nombre App
 KRIKA prueba
 ## Descripción
 Esta aplicación permite a los usuarios ver productos obtenidos desde VTEX y visualizarlos en una interfaz amigable.

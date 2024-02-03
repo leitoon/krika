@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter/widgets.dart';
 import 'package:krika/http/fetchProducts.dart';
+import 'package:krika/pages/detalles.dart';
+import 'package:krika/widgets/widgets.dart';
+
+import '../widgets/preciotext.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({Key? key}) : super(key: key);
@@ -77,6 +81,10 @@ class _InicioState extends State<Inicio> {
           );
         },
       ),
+      floatingActionButton: ElevatedButton(onPressed: (){},
+      child: const Icon(Icons.shopping_bag,
+      color: Color(0xffF334A0),
+      size: 30,)),
     );
   }
 
@@ -94,7 +102,14 @@ class _InicioState extends State<Inicio> {
         color: Colors.white,
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () 
+        {
+          Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Detalles(product: product),
+      ));
+        },
         style: ElevatedButton.styleFrom(
           elevation: 0,
           shape: const RoundedRectangleBorder(
@@ -128,31 +143,15 @@ class _InicioState extends State<Inicio> {
                 ],
               ),
               const SizedBox(height: 10),
-              Text(
-                product['ProductName'],
-                style: const TextStyle(
-                    fontSize: 12, color: Color(0xffF334A0), fontWeight: FontWeight.w400),
-                textAlign: TextAlign.start,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              Text(
-                '\$${NumberFormat("#,##0.00", "en_US").format(35000.0)}',
-                style: const TextStyle(
-                    fontSize: 15, color: Color(0xff0D0D0D), fontWeight: FontWeight.w400),
-                textAlign: TextAlign.start,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+              ProductText(product: product, tamfuen: 12,),
+              const FittedBox(
+                fit: BoxFit.contain,
+                child: PrecioText(tamfuen: 15,),
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'En stock',
-                    style: TextStyle(
-                        fontSize: 12, color: Color(0xffF334A0), fontWeight: FontWeight.w400),
-                    textAlign: TextAlign.start,
-                  ),
+                  TextStock(tamfuen: 12,),
                   Icon(
                     Icons.add_shopping_cart_outlined,
                     color: Color(0xff0D0D0D),
@@ -166,3 +165,7 @@ class _InicioState extends State<Inicio> {
     );
   }
 }
+
+
+
+
